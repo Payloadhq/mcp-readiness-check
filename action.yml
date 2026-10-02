@@ -1,0 +1,31 @@
+name: 'MCP Readiness Check'
+description: 'Run 10 basic MCP server readiness checks against server.json on every pull request. Free by Payload.'
+author: 'Payload'
+
+inputs:
+  manifest-path:
+    description: 'Path to the MCP server.json manifest, relative to the repository root.'
+    required: false
+    default: 'server.json'
+  fail-on:
+    description: "Minimum severity that fails the step: 'error' (default) or 'warning'."
+    required: false
+    default: 'error'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Run MCP readiness checks
+      shell: bash
+      run: |
+        code=0
+        python3 "${{ github.action_path }}/check.py" "${{ inputs.manifest-path }}" --repo-dir "$(dirname "${{ inputs.manifest-path }}")" || code=$?
+        if [ "$code" -eq 1 ]; then
+          echo "::error::MCP readiness check found errors."
+          exit 1
+        fi
+        if [ "$code" -eq 2 ] && [ "${{ inputs.fail-on }}" = "warning" ]; then
+          echo "::error::MCP readiness check found warnings (fail-on=warning)."
+          exit 1
+        fi
+        exit 0
