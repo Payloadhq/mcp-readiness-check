@@ -102,3 +102,10 @@ python3 check.py path/to/server.json [--repo-dir DIR] [--json]
 MIT — Copyright 2026 Payload. See [LICENSE](LICENSE).
 
 Support: kylers.partners@gmail.com · https://github.com/Payloadhq
+
+---
+
+**Payload** — small, sharp tools for developers.
+Developer portal: https://payloadhq.github.io/ ·
+All products: https://payloadtools.gumroad.com/ ·
+Contact: kylers.partners@gmail.com
