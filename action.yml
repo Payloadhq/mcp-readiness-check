@@ -1,6 +1,9 @@
 name: 'MCP Readiness Check'
-description: 'Run 10 basic MCP server readiness checks against server.json on every pull request. Free by Payload.'
+description: 'Ship a broken MCP server.json and registries reject you silently. Runs 10 readiness checks (required fields, name format, semver, transports, common registry rejections) on every PR. Free by Payload.'
 author: 'Payload'
+branding:
+  icon: 'check-circle'
+  color: 'blue'
 
 inputs:
   manifest-path:
