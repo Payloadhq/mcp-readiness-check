@@ -95,3 +95,9 @@ Built by [Payload](https://payloadhq.github.io/). Support: kylers.partners@gmail
 ## License
 
 MIT. Copyright 2026 Payload. See [LICENSE](LICENSE).
+
+---
+
+**More from Payload** · [payloadhq.github.io](https://payloadhq.github.io/) · [all Payload repos](https://github.com/Payloadhq)
+
+Related: [mcp-manifest-validator](https://github.com/Payloadhq/mcp-manifest-validator) · [payload-sample-mcp-server](https://github.com/Payloadhq/payload-sample-mcp-server)
